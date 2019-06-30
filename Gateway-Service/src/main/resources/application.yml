@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    config:
+      name: gateway-service
+      discovery:
+        service-id: gateway-service
+        enabled: true
+  http:
+    converters:
+      preferred-json-mapper: gson
+
+learn:
+  security:
+    jwt:
+      signkey: BNP5PoFaq12UapkBymWQDbhniFr65lWG
+    clientId: test
+    clientSecret: secret
+    check_token:
+      url: http://localhost:8089/oauth/check_token
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  #  prefix: /api/auth
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    account:
+      path: /account/**
+      #      url: http://localhost:8089/
+      serviceId: account-service
+
+logging:
+  file: logs/eiz-gateway-log.txt
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    com.eiz.ecosys.gateway: DEBUG
+    org.springframework: DEBUG
+    org.hibernate: DEBUG
