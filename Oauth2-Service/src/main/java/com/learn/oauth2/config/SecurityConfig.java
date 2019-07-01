@@ -1,5 +1,6 @@
 package com.learn.oauth2.config;
 
+import com.learn.oauth2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserService userDetailsService;
 
     @Autowired
-    private EizAuthenticationProvider authProvider;
+    private Oauth2AuthenticationProvider authProvider;
 
     @Override
     @Bean
