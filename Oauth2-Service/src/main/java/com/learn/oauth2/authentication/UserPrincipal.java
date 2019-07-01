@@ -1,5 +1,6 @@
 package com.learn.oauth2.authentication;
 
+import com.learn.oauth2.model.po.TUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
