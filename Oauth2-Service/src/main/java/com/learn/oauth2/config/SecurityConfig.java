@@ -1,5 +1,7 @@
 package com.learn.oauth2.config;
 
+import com.learn.oauth2.authentication.Oauth2AuthenticationProvider;
+import com.learn.oauth2.authentication.Oauth2AuthenticationUrlEntryPoint;
 import com.learn.oauth2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -58,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .and()
-                .exceptionHandling().authenticationEntryPoint(new EizAuthenticationUrlEntryPoint("/eiz-account/signin"));
+                .exceptionHandling().authenticationEntryPoint(new Oauth2AuthenticationUrlEntryPoint("/eiz-account/signin"));
     }
 
 

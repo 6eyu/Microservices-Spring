@@ -1,5 +1,7 @@
 package com.learn.oauth2.config;
 
+import com.learn.oauth2.authentication.UserPrincipal;
+import com.learn.oauth2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +22,7 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
