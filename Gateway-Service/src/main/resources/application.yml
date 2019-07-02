@@ -38,7 +38,7 @@ zuul:
       serviceId: account-service
 
 logging:
-  file: logs/eiz-gateway-log.txt
+  file: logs/gateway-log.txt
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   level:
